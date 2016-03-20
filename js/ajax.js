@@ -3,7 +3,7 @@
   'use strict';
 
   /**
-   * Command to Slide up page elements before removing them.
+   * Command to Slide Down page elements before removing them.
    *
    * @param {Drupal.Ajax} [ajax]
    * @param {object} response
@@ -20,7 +20,7 @@
   }
 
   /**
-   * Drupal behaviour to remove a log element when it is closed.
+   * Drupal behavior to remove a log element when it is closed.
    *
    * @type {{attach: Function}}
    */

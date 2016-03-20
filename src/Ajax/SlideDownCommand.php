@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Contains \Drupal\ajax_dblog\Ajax\SlideUpCommand.php
+ * Contains \Drupal\ajax_dblog\Ajax\SlideDownCommand.php
  */
 
 namespace Drupal\ajax_dblog\Ajax;
