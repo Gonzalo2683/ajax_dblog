@@ -4,6 +4,7 @@ ajax-dblog:
     component:
       css/ajax_dblog.module.css: {}
   js:
-    js/ajax.js: {}
+    - js/behaviors.js: {}
+    - js/ajax.js: {}
   dependencies:
     - core/drupal.ajax

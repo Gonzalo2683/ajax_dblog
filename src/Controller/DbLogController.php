@@ -6,6 +6,7 @@
 
 namespace Drupal\ajax_dblog\Controller;
 
+// Include command classes that will be used.
 use Drupal\ajax_dblog\Ajax\SlideDownCommand;
 use Drupal\Core\Ajax\AfterCommand;
 use Drupal\Core\Ajax\AjaxResponse;
@@ -41,11 +42,13 @@ class DbLogController extends ControllerBase {
         // Build route parameters.
         $parameters = array(
           'event_id' => $wid,
+          // Set method to 'nojs' (will be replaced with 'ajax' during requests).
           'method' => 'nojs',
         );
-        // Build link options
+        // Build link options.
         $options = array(
           'attributes' => array(
+            // Add 'use-ajax' as class to link to utilize Ajax API.
             'class' => array('use-ajax', 'dblog-event-link'),
             'data-event-id' => $wid,
             'title' => $text,
@@ -57,7 +60,7 @@ class DbLogController extends ControllerBase {
         $row['id'] = 'dblog-event-' . $wid;
       }
     }
-    // Add custom library.
+    // Add custom library (will add ajax and commands).
     $build['#attached']['library'][] = 'ajax_dblog/ajax-dblog';
     return $build;
   }
@@ -113,6 +116,7 @@ class DbLogController extends ControllerBase {
       }
     }
 
+    // Not using Ajax or failed to retrieve log event details.
     if ($redirect) {
       // Redirect to actual page.
       $response = new RedirectResponse($event_url->toString(), 302);

@@ -1,5 +1,7 @@
-name: 'AJAX Database Log'
-type: module
-description: Adds ajax to the dblog page, to pull in log events.
-package: other
-core: 8.x
+ name: 'AJAX Database Log'
+ type: module
+ description: Adds ajax to the dblog overview page to pull in log details.
+ package: other
+ core: 8.x
+ dependencies:
+  - dblog
