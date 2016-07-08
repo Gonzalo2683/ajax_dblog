@@ -41,4 +41,14 @@
     }
   }
 
+  /**
+   * Custom jQuery event to remove container wrapper from ajax inserted tr.
+   *  Remove when https://www.drupal.org/node/736066 is resolved.
+   */
+  $.fn.unwrapEventRow = function(row_id) {
+   if ($(row_id).parent().is("div")) {
+     $(row_id).unwrap();
+   }
+  }
+
 })(jQuery, this, Drupal, drupalSettings);

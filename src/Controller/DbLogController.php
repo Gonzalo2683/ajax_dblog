@@ -9,6 +9,7 @@ namespace Drupal\ajax_dblog\Controller;
 use Drupal\ajax_dblog\Ajax\SlideDownCommand;
 use Drupal\Core\Ajax\AfterCommand;
 use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\InvokeCommand;
 use Drupal\Core\Ajax\RemoveCommand;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
@@ -108,6 +109,8 @@ class DbLogController extends ControllerBase {
         $response->addCommand(new RemoveCommand('.dblog-event-row'));
         // Insert event details after event.
         $response->addCommand(new AfterCommand('#dblog-event-' . $event_id, $event_details));
+        // Unwrap new row.
+        $response->addCommand(new InvokeCommand('#' . $event_details['#row_id'],'unwrapEventRow', ['#' . $event_details['#row_id']]));
         // SlideDown event details.
         $response->addCommand(new SlideDownCommand('#dblog-event-details-' . $event_id));
       }
