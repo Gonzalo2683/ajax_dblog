@@ -1,8 +1,4 @@
 <?php
-/**
- * @file
- * Contains \Drupal\ajax_dblog\Routing\RouteSubscriber.
- */
 
 namespace Drupal\ajax_dblog\Routing;
 

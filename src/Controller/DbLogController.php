@@ -1,8 +1,4 @@
 <?php
-/**
- * @file
- * Contains \Drupal\ajax_dblog\Controller\DbLogController.php
- */
 
 namespace Drupal\ajax_dblog\Controller;
 
